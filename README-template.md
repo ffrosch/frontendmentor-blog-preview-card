@@ -49,6 +49,10 @@ This exercise uses `react`, `tailwindcss` and `styled-components` delivered by C
 This setup is **not** recommended for production, but seems very suitable for small practice projects.
 See [styled-components#installation](https://styled-components.com/docs/basics#installation) and expand `Click here to see alternative CDN installation instructions`.
 
+Note: with the upcoming React 19 no further UMD packages will be provided.
+Instead it will be possible to load React 19+ as ESM Modules.
+[Peter Kellner](https://peterkellner.net/2024/05/10/running-react-19-from-a-cdn-and-using-esm.sh/) wrote an article on how to do that.
+
 ### React, ReactDOM, Babel
 
 Include these in the `body` section:
