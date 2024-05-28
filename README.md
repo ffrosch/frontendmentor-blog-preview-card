@@ -58,7 +58,8 @@ npm install -D @emotion/babel-plugin
 
 ### Configuration
 
-To suppport the `css` prop from `emotion` (with Typescript) these adjustments are necessary:
+To suppport the `css` prop from `emotion` (with Typescript) a few adjustments are necessary (thanks go out to [Mehdi Najafi
+Mehdi Najafi](https://dev.to/mehdinajafi/how-to-use-emotion-css-prop-in-vite-39pj)):
 
 ```js
 // vite.config.js
