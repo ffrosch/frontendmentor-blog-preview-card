@@ -41,6 +41,9 @@ const cardCss = {
     boxShadow: `8px 8px ${colors.black}`,
     transition: 'all 0.2s ease-in-out',
 
+    alignSelf: 'center',
+    marginTop: 'auto',
+
     ':hover': {
       transform: 'translate(-8px, -8px)',
       boxShadow: `16px 16px ${colors.black}`,
@@ -98,6 +101,16 @@ const cardCss = {
   }),
 };
 
+const footerCss = css({
+  fontSize: 'var(--text-body-s)',
+  textAlign: 'center',
+  margin: '12px 24px',
+  position: 'sticky',
+  alignSelf: 'end',
+
+  a: { color: colors.grey },
+});
+
 const GlobalStyle = () => {
   return (
     <Global
@@ -125,6 +138,10 @@ const GlobalStyle = () => {
 
         #root {
           place-self: center;
+          margin-top: auto;
+          display: grid;
+          place-items: center;
+          height: 100%;
         }
       `}
     />
@@ -171,11 +188,39 @@ const BlogPreviewCard = ({ props }: { props: typeof cardData }) => {
   );
 };
 
+const Footer = () => {
+  return (
+    <footer
+      role='contentinfo'
+      css={footerCss}
+    >
+      Challenge by{' '}
+      <a
+        href='https://www.frontendmentor.io?ref=challenge'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Frontend Mentor
+      </a>
+      . Coded by{' '}
+      <a
+        href='https://florianfrosch.de'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        Florian Frosch
+      </a>
+      .
+    </footer>
+  );
+};
+
 function App() {
   return (
     <>
       <GlobalStyle />
       <BlogPreviewCard props={cardData} />
+      <Footer />
     </>
   );
 }
