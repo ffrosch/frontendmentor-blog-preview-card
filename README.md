@@ -12,11 +12,7 @@ This is a solution to the [Blog preview card challenge on Frontend Mentor](https
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -28,24 +24,16 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Screenshot of the component](./screenshot.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/ffrosch/frontendmentor-blog-preview-card)
+- [Live Site URL](https://ffrosch.github.io/frontendmentor-blog-preview-card/)
 
 ## Tech Stack
 
-This exercise uses `react-ts` and `emotion`.
+This exercise uses `react-ts`, `emotion` and a custom deployment workflow on Github Pages.
 
 ### Installation
 
@@ -61,8 +49,9 @@ npm install -D @emotion/babel-plugin
 To suppport the `css` prop from `emotion` (with Typescript) a few adjustments are necessary (thanks go out to [Mehdi Najafi
 Mehdi Najafi](https://dev.to/mehdinajafi/how-to-use-emotion-css-prop-in-vite-39pj)):
 
+`vite.config.js`
+
 ```js
-// vite.config.js
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -78,8 +67,9 @@ export default defineConfig({
 });
 ```
 
+`tsconfig.json`
+
 ```json
-//  tsconfig.json
 {
   "compilerOptions": {
     // ...
@@ -88,8 +78,9 @@ export default defineConfig({
 }
 ```
 
+`vite-env.d.ts`
+
 ```ts
-//  vite-env.d.ts
 /// <reference types="vite/client" />
 /// <reference types="@emotion/react/types/css-prop" />
 ```
@@ -102,61 +93,33 @@ export default defineConfig({
 - CSS custom properties
 - Flexbox
 - CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Typescript
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Emotion CSS](https://emotion.sh/)
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+I practiced using **Emotion CSS**, a CSS-in-JS library.
+The approach I chose was to mainly work with object styles.
+Additionally I used the css prop, which necessitated some adjustments for Typescript, and the global css component.
+My previous experience with **styled-components** was very helpful.
+Getting some more practice with Typescript was also nice.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
-
-```js
-const proudOfThisFunc = () => {
-  console.log('🎉');
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+The thing I am most proud of is using CSS custom properties combined with CSS-in-JS, which led to very clean code for adjusting css properties for different screen sizes.
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+CSS inheritance with CSS-in-JS combined with the power of CSS custom properties!
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [CSS variables for react-devs](https://www.joshwcomeau.com/css/css-variables-for-react-devs/)
+- [Emotion CSS best practices](https://emotion.sh/docs/best-practices)
+- [Colocation](https://kentcdodds.com/blog/colocation)
+- [Change how you write your CSS-in-JS for better performance](https://douges.dev/blog/taming-the-beast-that-is-css-in-js)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [florianfrosch.de](https://florianfrosch.de/)
+- Frontend Mentor - [@ffrosch](https://www.frontendmentor.io/profile/ffrosch)
