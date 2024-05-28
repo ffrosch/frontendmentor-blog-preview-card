@@ -22,6 +22,7 @@ const cardData = {
 
 const cardCss = {
   self: css({
+    cursor: 'pointer',
     width: '384px',
     height: '522px',
     borderRadius: '20px',
@@ -30,6 +31,13 @@ const cardCss = {
     display: 'flex',
     flexDirection: 'column',
     gap: '24px',
+    boxShadow: `8px 8px ${colors.black}`,
+    transition: 'all 0.2s ease-in-out',
+
+    ':hover': {
+      transform: 'translate(-8px, -8px)',
+      boxShadow: `16px 16px ${colors.black}`,
+    },
   }),
 
   image: css({
@@ -55,6 +63,10 @@ const cardCss = {
 
   title: css({
     fontSize: '24px',
+
+    ':hover': {
+      color: colors.primary,
+    },
   }),
 
   preview: css({
