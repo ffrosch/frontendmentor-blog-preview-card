@@ -82,7 +82,7 @@ const cardCss = {
     fontSize: 'var(--text-h)',
     fontWeight: 'bold',
 
-    ':hover': {
+    ':hover, :focus, :active': {
       color: colors.primary,
     },
   }),
