@@ -9,6 +9,12 @@ const colors = {
   black: '#111111',
 };
 
+const text = {
+  heading: '24px',
+  bodyM: '16px',
+  bodyS: '14px',
+};
+
 const cardData = {
   title: 'HTML & CSS foundations',
   preview:
@@ -28,6 +34,7 @@ const cardCss = {
     borderRadius: '20px',
     backgroundColor: colors.white,
     padding: '24px',
+    margin: '24px',
     display: 'flex',
     flexDirection: 'column',
     gap: '24px',
@@ -38,10 +45,17 @@ const cardCss = {
       transform: 'translate(-8px, -8px)',
       boxShadow: `16px 16px ${colors.black}`,
     },
+
+    '@media (max-width: 432px)': {
+      width: '327px',
+      height: '501px',
+    },
   }),
 
   image: css({
     borderRadius: '10px',
+    height: '200px',
+    objectFit: 'cover',
   }),
 
   content: css({
@@ -50,7 +64,7 @@ const cardCss = {
     gap: '12px',
   }),
 
-  date: css({ fontSize: '14px' }),
+  date: css({ fontSize: 'var(--text-body-s)' }),
 
   tag: css({
     backgroundColor: colors.primary,
@@ -58,11 +72,12 @@ const cardCss = {
     width: 'fit-content',
     padding: '4px 12px',
     borderRadius: '4px',
-    fontSize: '14px',
+    fontSize: 'var(--text-body-s)',
   }),
 
   title: css({
-    fontSize: '24px',
+    fontSize: 'var(--text-h)',
+    fontWeight: 'bold',
 
     ':hover': {
       color: colors.primary,
@@ -71,7 +86,7 @@ const cardCss = {
 
   preview: css({
     color: colors.grey,
-    fontSize: '16px',
+    fontSize: 'var(--text-body-m)',
   }),
 
   author: css({
@@ -79,7 +94,7 @@ const cardCss = {
     alignItems: 'center',
     gap: '12px',
     fontWeight: 'bold',
-    fontSize: '14px',
+    fontSize: 'var(--text-body-s)',
   }),
 };
 
@@ -89,9 +104,21 @@ const GlobalStyle = () => {
       styles={css`
         @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
 
+        html {
+          --text-h: ${text.heading};
+          --text-body-m: ${text.bodyM};
+          --text-body-s: ${text.bodyS};
+          font-family: 'Figtree', sans-serif;
+
+          @media (max-width: 432px) {
+            --text-h: 20px;
+            --text-body-m: 14px;
+            --text-body-s: 12px;
+          }
+        }
+
         body {
           background-color: ${colors.primary};
-          font-family: 'Figtree', sans-serif;
           min-height: 100dvh;
           display: grid;
         }
