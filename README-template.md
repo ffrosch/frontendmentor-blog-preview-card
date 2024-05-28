@@ -45,16 +45,87 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ## Tech Stack
 
-This exercise uses `react-ts` and `emotion`.
+This exercise uses `react`, `tailwindcss` and `styled-components` delivered by CDN.
+This setup is **not** recommended for production, but seems very suitable for small practice projects.
+See [styled-components#installation](https://styled-components.com/docs/basics#installation) and expand `Click here to see alternative CDN installation instructions`.
 
-### Installation
+Note: with the upcoming React 19 no further UMD packages will be provided.
+Instead it will be possible to load React 19+ as ESM Modules.
+[Peter Kellner](https://peterkellner.net/2024/05/10/running-react-19-from-a-cdn-and-using-esm.sh/) wrote an article on how to do that.
 
-```shell
-# install in current directory
-npm create vite@latest . -- --template react-ts
-npm install --save @emotion/react
-npm install -D @emotion/babel-plugin
+### React, ReactDOM, Babel
+
+Include these in the `body` section:
+
+```html
+<body>
+  <!-- Import React, ReactDOM and Babel -->
+  <script
+    crossorigin
+    src="https://unpkg.com/react@18/umd/react.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+  ></script>
+  <script
+    crossorigin
+    src="https://unpkg.com/@babel/standalone/babel.min.js"
+  ></script>
+</body>
 ```
+
+The package `@babel/standalone` will automatically compile and execute all script tags with type `text/babel` or `text/jsx`.
+So it is important to load the `react` app as `type="text/babel"`:
+
+```html
+<body>
+  <!-- ... ALL other imports and scripts -->
+
+  <!-- Import your react app component -->
+  <script
+    type="text/babel"
+    src="./App.js"
+  ></script>
+</body>
+```
+
+### Styled Components
+
+Include these in the `body` section below the React, ReactDOM and Babel imports:
+
+```html
+<body>
+  <!-- ... React, ReactDOM, Babel imports ... -->
+
+  <!-- React-is: necessary for styled components v5 from CDN -->
+  <script
+    crossorigin
+    src="https://unpkg.com/react-is@18.3.1/umd/react-is.production.min.js"
+  ></script>
+
+  <!-- Import Styled Components v5: needs react-is -->
+  <script
+    crossorigin
+    src="https://unpkg.com/styled-components/dist/styled-components.min.js"
+  ></script>
+
+  <!-- ... react app import ... -->
+</body>
+```
+
+### Tailwind CSS
+
+Include this snippet in the `head` section:
+
+```html
+<head>
+  <!-- Import Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+```
+
+To make IntelliSense work in VS Code, it is important to create an empty `tailwind.config.js` file in the root of the project folder.
 
 ## My process
 
@@ -67,6 +138,7 @@ npm install -D @emotion/babel-plugin
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
+- [Styled Components](https://styled-components.com/) - For styles
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
